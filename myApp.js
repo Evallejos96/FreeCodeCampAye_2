@@ -1,44 +1,17 @@
 let express = require('express');
 let app = express();
 
-// ejercicio 1
+// Ejercicio 1
 console.log("Hello World");
 
-// ejercicio 2
+// Ejercicio 2 (comentado)
+// app.get("/", function(req, res) {
+//   res.send("Hello Express");
+// });
+
+// Ejercicio 3: enviar index.html
 app.get("/", function(req, res) {
-  res.send("Hello Express");
+  res.sendFile(__dirname + "/views/index.html");
 });
 
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
