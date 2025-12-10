@@ -17,6 +17,11 @@ app.get('/now', function(req, res, next) {
   res.json({ time: req.time });
 });
 
+// Ejercicio 9 - Nuevo: ruta con parámetro
+app.get("/:word/echo", function(req, res) {
+  res.json({ echo: req.params.word });
+});
+
 // Ejercicio 1
 console.log("Hello World");
 
