@@ -22,6 +22,14 @@ app.get("/:word/echo", function(req, res) {
   res.json({ echo: req.params.word });
 });
 
+//Ejercicio 10 - Name con query params
+app.get("/name", function(req, res) {
+  const first = req.query.first;
+  const last = req.query.last;
+  res.json({ name: first + " " + last });
+});
+
+
 // Ejercicio 1
 console.log("Hello World");
 
