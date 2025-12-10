@@ -9,6 +9,14 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Ejercicio 8 /now con middleware encadenado
+app.get('/now', function(req, res, next) {
+  req.time = new Date().toString();
+  next();
+}, function(req, res) {
+  res.json({ time: req.time });
+});
+
 // Ejercicio 1
 console.log("Hello World");
 
