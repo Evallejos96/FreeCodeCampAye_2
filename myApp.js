@@ -3,6 +3,11 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+// 🔥 Agregar body-parser (Ejercicio 11)
+let bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
 // 🔥 Ejercicio 7: Middleware logger (VA ACÁ)
 app.use(function(req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
@@ -29,6 +34,12 @@ app.get("/name", function(req, res) {
   res.json({ name: first + " " + last });
 });
 
+// 🔥 Ejercicio 11 - Name con POST usando body-parser
+app.post("/name", function(req, res) {
+  const first = req.body.first;
+  const last = req.body.last;
+  res.json({ name: first + " " + last });
+});
 
 // Ejercicio 1
 console.log("Hello World");
