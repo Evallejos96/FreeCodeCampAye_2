@@ -3,6 +3,12 @@ require('dotenv').config();
 let express = require('express');
 let app = express();
 
+// 🔥 Ejercicio 7: Middleware logger (VA ACÁ)
+app.use(function(req, res, next) {
+  console.log(req.method + " " + req.path + " - " + req.ip);
+  next();
+});
+
 // Ejercicio 1
 console.log("Hello World");
 
